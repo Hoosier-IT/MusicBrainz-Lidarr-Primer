@@ -72,6 +72,20 @@ A two-stage Python script pipeline to bulk-import artists into Lidarr.
     The Beatles
     ```
 
+    #### Automatically Generating `folders.txt` (Recommended)
+
+    You can use the included `create_artist_list.py` script to automatically generate `folders.txt` from your existing music library directory.
+
+    **Note:** This script must be run on a machine that has access to your music library folder.
+
+    ```bash
+    # Example for a library at /mnt/music
+    python3 create_artist_list.py /mnt/music
+
+    # Example for a library on a Windows machine
+    python3 create_artist_list.py "D:\Media\Music"
+    ```
+
 5.  **Update the User-Agent:**
     Open `musicbrainz_lookup.py` and replace the placeholder email in the `HEADERS` dictionary with your own. This is required by the MusicBrainz API policy.
     ```python
